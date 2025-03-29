@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+¡Hola! Este es un ejemplo de subtítulo.
+
+00:00:04.500 --> 00:00:08.000
+Estos subtitulos aparecen, modificando el archivo subtitulos.vtt
+
+00:00:08.500 --> 00:00:12.000
+El tiempo y el contenido se modifica en este archivo subtitulos.vtt
