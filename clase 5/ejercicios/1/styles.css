@@ -1,0 +1,7 @@
+html {
+    /* configuracion de la fuente, con la primera propiedad ya funciona */
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-optical-sizing: auto;
+  }
