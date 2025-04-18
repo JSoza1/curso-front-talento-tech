@@ -1,0 +1,25 @@
+header {
+    background-color: rgb(30, 255, 0);
+}
+main {
+    background-color: aqua;
+}
+
+footer {
+    background-color: aquamarine;
+}
+
+* {
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.nav-list {
+    /* esto saca los puntos de las listas desordenadas y talvez los numeros de las listas ordenadas */
+    list-style: none;
+} 
+
+a {
+    /* esto saca el subrayado de los enlaces */
+    text-decoration: none;
+    color: brown;
+}
