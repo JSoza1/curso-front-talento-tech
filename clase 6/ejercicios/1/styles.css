@@ -1,0 +1,46 @@
+html {
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(241, 130, 217);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+    background-color: red;
+    border-style:solid;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    background-color: rgb(235, 241, 241);
+    border-style:solid;
+    gap: 50px; /* <-- Agregá esta línea */
+    
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(125, 125, 231);
+    color: rgb(0, 0, 0);
+    border-style:solid;
+}
+
+section p {
+    border-style: solid;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+    background-color: blueviolet;
+    border-style:solid;
+}
