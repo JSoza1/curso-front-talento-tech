@@ -1,0 +1,21 @@
+#reseñas {
+    display: grid;
+    /* auto-fit completa el espacio vacio estirando los elementos dentro del contenedor */
+    /* en cambio auto-fill, deja un espacio vacio como si hubiera otro elemento, y no estira los elementos del contenedor */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* el minmax() hace referencia a el tamaño minimo y maximo que puede ocupar cada elemento*/
+    /* 250px es el  tamaño minimo y 1fr el tamaño maximo */
+    /* (1fr = fraccion de espacio sobrante, es indistinto poner 2fr, 3fr, etc. en este caso) */
+    gap: 50px;
+    padding: 2%;
+    border-style: double;
+} 
+
+.card {
+    border-style: solid;
+    padding: 5%;
+}
+
+.card:hover {
+    transform: translateY(-5px)
+}
