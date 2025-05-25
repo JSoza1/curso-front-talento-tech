@@ -14,6 +14,7 @@
 .card {
     border-style: solid;
     padding: 5%;
+    box-shadow: 0 4px 8px rgba(12, 171, 245, 0.884);
 }
 
 .card:hover {
