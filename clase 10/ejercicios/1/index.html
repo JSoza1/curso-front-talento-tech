@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script>
+
+let vip = confirm("Sos VIP?")
+
+//para hacerlo mas eficiente, dentro del prompt, se debe poner un texto indicando que se deberia escribir
+let edad = parseFloat(prompt("Cual es tu edad?"))
+
+if (edad >= 18 && vip == true) {
+    console.log ("es mayor de edad, tiene " + edad + " años" + " y ademas es VIP")
+    console.log ("Acceso permitido")
+} 
+
+else if (edad >= 18 && vip == false) {
+    console.log ("es mayor de edad, pero no es VIP")
+    console.log ("Acceso denegado")
+}
+
+else if (edad < 18 && vip == true) {
+    console.log ("es menor de edad y es VIP")
+    console.log ("Acceso denegado")
+}
+
+else {
+    console.log ("es menor de edad y no es VIP")
+    console.log ("Acesso denegado")
+}
+
+</script>
+</body>
+</html>
