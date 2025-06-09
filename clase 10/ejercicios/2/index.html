@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Array de objetos
+        let Productos = [{nombre: "Mouse", descuento: true}, {nombre: "Teclado", descuento: false}, {nombre: "Monitor", descuento: true}, {nombre: "Parlante", descuento: false}];
+        console.log("==== Productos con descuento ====")
+        //bucle for que sigue un determinado orden de ejecucion *
+        for (let i = 0; i < Productos.length; i++) {
+            //si (la propiedad "descuento" del objeto Producto[x] es true) *
+               //dato a tener en cuenta, que de forma predeterminda se asume que es true el descuento
+               //sino en otros lenguajes se habria que hacer (Productos[i].descuento === true)
+            if (Productos[i].descuento) {
+                //mostrar en consola la propiedad nombre del objeto producto[x] + un string
+                console.log(Productos[i].nombre + " tiene descuento");
+            }
+        }
+        console.log("==== Productos sin descuento ====")
+        for (let i = 0; i < Productos.length; i++) {
+            if (Productos[i].descuento === false) {
+                console.log(Productos[i].nombre + " no tiene descuento")
+            }
+        }
+
+        console.log("==== Productos totales ====")
+        for (let i = 0; i < Productos.length; i++) {
+            //aca hay un detalle para que se vea mas natural empezando desde la numeracion 1 en consola
+            //sin este ajuste diria producto n°0 "que es realmente porque el array comienza del 0"
+            //pero esto se soluciona con (i + 1), toda la numeracion mostrada se le sumara 1, y de esta manera, es mas natural visto por el usuario 
+            console.log("Producto n°" + (i + 1)+ " " + Productos[i].nombre )
+        }
+    </script>
+</body>
+</html>
