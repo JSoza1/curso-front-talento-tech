@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lista que se agregan cosas</h2>
+    <button id="boton">Boton agregador</button>
+    <button id="boton2">Boton eliminador</button>
+    <ul id="laLista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+    </ul>
+    <script>
+
+        //Se almacena boton en variable para agregarle evento posteriormente
+        let boton = document.getElementById("boton")
+
+        //Se agrega el evento al boton mediante notacion de punto con addEventListener
+        boton.addEventListener("click",() => {
+        
+        //Creo un elemento (objeto) con createElement y lo asigno a una variable
+        let nuevoElemento = document.createElement("li")
+
+        //Le doy un valor a esa variable, a una propiedad especifica, accediendo con notacion de punto
+        nuevoElemento.textContent = "Nuevo Elemento"
+
+        //Selecciono un elemento y le agrego otro dentro del mismo, con el metodo "appendChild(elemento)"
+        document.getElementById("laLista").appendChild(nuevoElemento)
+
+        })
+
+        let boton2 = document.getElementById("boton2")
+
+        //Evento para eliminar elementos
+        boton2.addEventListener("click", () => {
+            //Selecciono la lista en general "ul" y lo guardo en variable
+            let lista = document.getElementById("laLista")
+            //Selecciono el ultimo elemento hijo de "ul" y lo guardo en variable
+            let ultimoItem = lista.lastElementChild
+            //Si hay un ultimo item, se ejecuta el siguiente metodo
+            if (ultimoItem) {
+                //remove() elimina un elemento del DOM
+                ultimoItem.remove()
+            }
+        })
+
+
+    </script>
+</body>
+</html>

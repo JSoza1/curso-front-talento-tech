@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="t1">Texto que cambia</p>
+    <button id="b1" onclick="cambiador1()">boton 1</button>
+    <button id="b2" onclick="cambiador2()">boton 2</button>
+    <button id="b3">boton 3</button>
+    <script>
+        //manera no tan eficiente de hacerlo boton 1 y 2
+        let texto = document.getElementById("t1")
+        function cambiador1() {
+            texto.textContent = "texto del boton 1"
+        }
+        function cambiador2() {
+            texto.textContent = "texto del boton 2"
+        }
+
+        //Manera recomendada (uso de addEventListener)
+
+        //Se almacena el elemento del dom, en una variable y este a su vez es un objeto que se le puede agregar un metodo, mediante un evento nativo de JS
+        let boton3 = document.getElementById("b3")
+
+        // elemento.addEventListener("evento", funcion)
+
+        // Cuando ocurra este evento, ejecutá esta función.”
+
+        boton3.addEventListener("click", () => { 
+            texto.textContent = "texto del boton 3"
+        }) 
+        
+    </script>
+</body>
+</html>
