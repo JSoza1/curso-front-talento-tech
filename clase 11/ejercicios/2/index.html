@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculoPrecio() {
+        let precioInicial = parseInt(prompt("Cual es el precio del producto?"))
+        let iva = 21
+        let ivaIngresado = parseInt(prompt("Ingrese el % de IVA, sino ingresa nada el predeterminado es 21%"))
+        let precioFinal1 = precioInicial + (precioInicial * ivaIngresado) / 100
+        let PrecioFinal2 = precioInicial + (precioInicial * iva) / 100
+        
+        if (!isNaN(ivaIngresado)) {
+            console.log("el precio total con IVA es 1", precioFinal1)
+        } 
+        else {
+        console.log("el precio total con IVA es 2", PrecioFinal2)
+        }
+    }
+
+    calculoPrecio()
+    </script>
+</body>
+</html>
