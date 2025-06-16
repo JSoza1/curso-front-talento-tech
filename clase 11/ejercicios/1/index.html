@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //ejercicio 1, no tan eficiente pero funcional
+
+        let nombre = prompt("Cual es tu nombre?")
+        let edad = parseInt(prompt("cual es tu edad?"))
+
+        function calculoEdad(nombre, edad) {
+            
+            let restanteEdad = 18 - edad
+
+            if (edad > 17) {
+                console.log(nombre, "es mayor de edad")
+            }
+
+            else {
+                console.log(nombre, "es menor de edad y le faltan para ser mayor ", restanteEdad, " año/s")
+            }
+        }
+    
+    calculoEdad(nombre, edad)
+
+    // Mejor forma de hacerlo, todo dentro de una funcion
+
+    function calculoEdad() {
+        let nombre = prompt("¿Cuál es tu nombre?")
+        let edad = parseInt(prompt("¿Cuál es tu edad?"))
+        let restanteEdad = 18 - edad
+
+        if (edad > 17) {
+            console.log(nombre, "es mayor de edad")
+        } 
+        else {
+        console.log(nombre, "es menor de edad y le faltan", restanteEdad, "año/s")
+        }
+    }
+
+    calculoEdad()
+
+    </script>
+</body>
+</html>
