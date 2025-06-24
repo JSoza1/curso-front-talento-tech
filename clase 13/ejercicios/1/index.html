@@ -1,0 +1,66 @@
+<form id="formulario">
+  <!-- Campo para que el usuario escriba su nombre -->
+  <label for="Nombre">Nombre:</label>
+  <input type="text" id="Nombre">
+  <br>
+
+  <!-- Opciones de color, solo se puede elegir una por tener el mismo name="color" -->
+  <label><input type="radio" name="color" value="red"> Rojo</label><br>
+  <label><input type="radio" name="color" value="blue"> Azul</label><br>
+  <label><input type="radio" name="color" value="green"> Verde</label><br><br>
+
+  <!-- Botón para enviar el formulario -->
+  <input type="submit" value="Guardar">
+</form>
+
+<!-- Aquí se mostrará el nombre guardado -->
+<h2 id="nombreMostrado"></h2>
+
+<script>
+  // Esta función guarda en el localStorage el nombre y el color
+  function guardarPreferencias(nombre, color) {
+    // localStorage es una "memoria" que guarda datos en el navegador, incluso si recargas la página
+    // El método setItem recibe dos parámetros: una clave (key) y un valor (value)
+    localStorage.setItem("nombre", nombre); // guardamos el nombre con la clave "nombre"
+    localStorage.setItem("color", color);   // guardamos el color con la clave "color"
+  }
+
+  // Esta función aplica las preferencias guardadas:
+  // cambia el color de fondo y muestra el nombre en el <h2>
+  function aplicarPreferencias() {
+    // Recuperamos el color guardado con la clave "color"
+    const colorGuardado = localStorage.getItem("color");
+
+    // Recuperamos el nombre guardado con la clave "nombre"
+    const nombreGuardado = localStorage.getItem("nombre");
+
+    // Cambiamos el color de fondo de la página con el color recuperado
+    document.body.style.backgroundColor = colorGuardado;
+
+    // Mostramos el nombre en el elemento con id "nombreMostrado"
+    document.getElementById("nombreMostrado").textContent = nombreGuardado;
+  }
+
+  // Aquí le decimos al formulario que cuando se envíe (submit) ejecute la función que guarda y aplica
+  document.getElementById("formulario").addEventListener("submit", function () {
+    // Capturamos el valor del input con id "Nombre"
+    const nombre = document.getElementById("Nombre").value;
+
+    // Capturamos el valor del radio que está seleccionado (checked)
+    // querySelector busca el primer input que tenga name="color" y que esté marcado (checked)
+    const color = document.querySelector('input[name="color"]:checked').value;
+
+    // Guardamos las preferencias en localStorage
+    guardarPreferencias(nombre, color);
+
+    // Aplicamos el fondo y mostramos el nombre
+    aplicarPreferencias();
+
+    // Nota: Al no usar preventDefault(), el formulario recarga la página.
+    // La recarga es rápida y no se pierde la info porque está guardada en localStorage,
+    // y al cargar se vuelve a llamar aplicarPreferencias() (ver más abajo).
+  });
+
+  // Cuando la página se carga, se ejecuta esta función para aplicar preferencias guardadas automáticamente
+  window.onload = aplicarPreferencias;
+</script>
